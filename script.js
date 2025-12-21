@@ -72,12 +72,37 @@ function createFallingElements() {
 
 function tryPlay() {
     const audio = document.getElementById('bgm');
+    const btn = document.getElementById('music-toggle');
+
     if (audio.paused) {
-        audio.play().catch(() => {
+        audio.play().then(() => {
+            btn.classList.remove('paused');
+        }).catch(() => {
             console.log("自動再生がブロックされました");
+            btn.classList.add('paused');
         });
     }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const audio = document.getElementById('bgm');
+    const btn = document.getElementById('music-toggle');
+
+    // Initial state
+    if (audio.paused) {
+        btn.classList.add('paused');
+    }
+
+    btn.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play();
+            btn.classList.remove('paused');
+        } else {
+            audio.pause();
+            btn.classList.add('paused');
+        }
+    });
+});
 
 window.addEventListener('load', tryPlay);
 document.addEventListener('click', tryPlay, { once: true });
