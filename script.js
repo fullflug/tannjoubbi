@@ -74,12 +74,20 @@ function tryPlay() {
     const audio = document.getElementById('bgm');
     const btn = document.getElementById('music-toggle');
 
+    // Default to Pause icon (assuming auto-play works)
+    btn.innerText = '⏸';
+    btn.style.paddingLeft = '0';
+
     if (audio.paused) {
         audio.play().then(() => {
+            btn.innerText = '⏸'; // Keep Pause icon if playing
             btn.classList.remove('paused');
+            btn.style.paddingLeft = '0';
         }).catch(() => {
             console.log("自動再生がブロックされました");
+            btn.innerText = '▶'; // Show Play icon if blocked
             btn.classList.add('paused');
+            btn.style.paddingLeft = '5px';
         });
     }
 }
@@ -88,18 +96,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const audio = document.getElementById('bgm');
     const btn = document.getElementById('music-toggle');
 
-    // Initial state
+    // Initial state check
     if (audio.paused) {
+        btn.innerText = '▶';
         btn.classList.add('paused');
+        btn.style.paddingLeft = '5px';
+    } else {
+        btn.innerText = '⏸';
+        btn.classList.remove('paused');
+        btn.style.paddingLeft = '0';
     }
 
     btn.addEventListener('click', () => {
         if (audio.paused) {
             audio.play();
+            btn.innerText = '⏸';
             btn.classList.remove('paused');
+            btn.style.paddingLeft = '0';
         } else {
             audio.pause();
+            btn.innerText = '▶';
             btn.classList.add('paused');
+            btn.style.paddingLeft = '5px';
         }
     });
 });

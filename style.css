@@ -558,22 +558,27 @@ body {
 /* Music Toggle Button */
 .music-btn {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
+    bottom: 30px;
+    right: 30px;
+    width: 70px;
+    /* Increased size */
+    height: 70px;
+    /* Increased size */
     border-radius: 50%;
     background: var(--accent-hot-pink);
     color: #fff;
-    border: 2px solid #fff;
-    font-size: 24px;
+    border: 3px solid #fff;
+    font-size: 30px;
+    /* Increased icon size */
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     z-index: 1000;
     transition: transform 0.2s, background 0.3s;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left: 5px;
+    /* Visual adjustment for Play icon centering */
 }
 
 .music-btn:hover {
@@ -582,20 +587,15 @@ body {
 }
 
 .music-btn.paused {
-    filter: grayscale(0.8);
-    opacity: 0.7;
-    position: fixed;
-    /* Ensure it stays fixed */
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--accent-pink);
+    padding-left: 8px;
+    /* Adjust for Play icon */
 }
 
-/* Add a strike-through effect or different icon if needed via JS or CSS psuedo */
+/* Remove strike-through */
 .music-btn.paused::after {
-    content: '';
-    position: absolute;
-    width: 80%;
-    height: 3px;
-    background: #fff;
-    transform: rotate(-45deg);
+    display: none;
 }
 
 .handwritten {
