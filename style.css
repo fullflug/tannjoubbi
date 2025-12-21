@@ -128,6 +128,147 @@ body {
     transform: rotate(35deg);
 }
 
+/* --- Scattered Decorations --- */
+
+/* Hearts */
+.deco-heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transform: rotate(-45deg);
+    opacity: 0.8;
+}
+
+.deco-heart::before,
+.deco-heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: currentColor;
+}
+
+.deco-heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.deco-heart::after {
+    left: 10px;
+    top: 0;
+}
+
+.deco-heart.pink {
+    color: var(--accent-hot-pink);
+}
+
+.deco-heart.black {
+    color: #333;
+}
+
+.deco-heart.white {
+    color: #fff;
+}
+
+/* Ribbons (Bowtie shape) */
+.deco-ribbon {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid currentColor;
+    border-bottom: 10px solid currentColor;
+    transform: rotate(45deg);
+    opacity: 0.8;
+}
+
+.deco-ribbon::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 6px;
+    height: 6px;
+    background: currentColor;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+.deco-ribbon.pink {
+    color: var(--accent-hot-pink);
+}
+
+.deco-ribbon.black {
+    color: #333;
+}
+
+.deco-ribbon.white {
+    color: #fff;
+}
+
+/* Positioning */
+.heart-1 {
+    top: 15%;
+    right: 10%;
+    transform: rotate(10deg) scale(1.5);
+}
+
+.heart-2 {
+    top: 30%;
+    left: 5%;
+    transform: rotate(-20deg) scale(1.2);
+}
+
+.heart-3 {
+    bottom: 25%;
+    left: 15%;
+    transform: rotate(15deg) scale(1.0);
+}
+
+.heart-4 {
+    bottom: 40%;
+    right: 5%;
+    transform: rotate(-10deg) scale(1.8);
+}
+
+.heart-5 {
+    top: 60%;
+    right: 20%;
+    transform: rotate(30deg) scale(0.8);
+}
+
+.heart-6 {
+    bottom: 10%;
+    right: 30%;
+    transform: rotate(5deg) scale(1.2);
+}
+
+.rib-1 {
+    top: 20%;
+    left: 20%;
+    transform: rotate(-15deg);
+}
+
+.rib-2 {
+    bottom: 30%;
+    right: 25%;
+    transform: rotate(20deg) scale(1.2);
+}
+
+.rib-3 {
+    top: 50%;
+    left: 10%;
+    transform: rotate(0deg) scale(0.8);
+}
+
+.rib-4 {
+    bottom: 15%;
+    left: 30%;
+    transform: rotate(-10deg) scale(1.5);
+}
+
 /* Noise overlay for texture */
 .noise-overlay {
     position: fixed;
