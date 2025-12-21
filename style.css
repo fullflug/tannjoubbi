@@ -20,6 +20,11 @@
 
 body {
     background-color: var(--bg-color);
+    background-image: url('background_theme.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     color: var(--text-main);
     font-family: var(--font-jp);
     overflow-x: hidden;
@@ -95,44 +100,7 @@ body {
     text-align: center;
     text-align: center;
     position: relative;
-    padding: 50px 0 50px 0;
-}
-
-/* Background Ribbons */
-.bg-ribbon {
-    position: fixed;
-    background: var(--accent-pink);
-    z-index: 0;
-    pointer-events: none;
-    opacity: 0.8;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.ribbon-1 {
-    width: 200%;
-    height: 40px;
-    top: -10%;
-    left: -50%;
-    transform: rotate(35deg);
-    border-top: 2px dashed #fff;
-    border-bottom: 2px dashed #fff;
-}
-
-.ribbon-2 {
-    width: 200%;
-    height: 20px;
-    bottom: 20%;
-    right: -50%;
-    transform: rotate(-35deg);
-    background: var(--accent-hot-pink);
-}
-
-.ribbon-3 {
-    width: 50%;
-    height: 15px;
-    top: 10%;
-    right: -10%;
-    transform: rotate(45deg);
+    padding: 50px 0 20px 0;
 }
 
 .sub-title {
@@ -229,7 +197,8 @@ body {
 
 /* Content Sections */
 .content-section {
-    margin: 80px 0;
+    margin: 20px 0 80px 0;
+    /* Reduced top margin from 80px to 20px */
     text-align: center;
 }
 
