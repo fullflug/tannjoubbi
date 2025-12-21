@@ -1,12 +1,12 @@
 :root {
-    --bg-color: #ffeff4;
-    /* Light Pink Background */
+    --bg-color: #ffc2d1;
+    /* More saturated pink */
     --text-main: #5d4037;
     /* Brown for text */
-    --accent-pink: #ff8da1;
-    /* Darker Pink for Accents */
-    --accent-hot-pink: #ff4081;
-    /* Hot Pink */
+    --accent-pink: #ff5c8d;
+    /* More vibrant accent */
+    --accent-hot-pink: #ff006e;
+    /* Vivid Hot Pink */
     --border-color: #ffb7c5;
     --font-jp: 'Zen Old Mincho', serif;
     --font-en: 'Pinyon Script', cursive;
@@ -46,9 +46,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.6) 20%, transparent 20%),
-        radial-gradient(rgba(255, 255, 255, 0.6) 20%, transparent 20%);
-    background-color: #ffeff4;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.4) 20%, transparent 20%),
+        radial-gradient(rgba(255, 255, 255, 0.4) 20%, transparent 20%);
+    background-color: #ffc2d1;
+    /* Match new saturated bg */
     background-position: 0 0, 15px 15px;
     background-size: 30px 30px;
 }
@@ -385,11 +386,16 @@ body {
 }
 
 .date-badge {
-    border: 1px solid var(--accent-pink);
-    padding: 5px 20px;
+    border: 2px solid var(--accent-pink);
+    padding: 8px 30px;
     border-radius: 50px;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
+    font-size: 1.5rem;
+    /* Increased size */
+    font-weight: bold;
+    letter-spacing: 3px;
+    background: rgba(255, 255, 255, 0.5);
+    display: inline-block;
+    margin-top: 10px;
 }
 
 .floating-elements {
