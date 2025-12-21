@@ -94,8 +94,8 @@ body {
     align-items: center;
     text-align: center;
     position: relative;
-    padding: 50px 0 100px 0;
-    /* Add bottom padding to prevent overlap */
+    padding: 50px 0 150px 0;
+    /* Increased bottom padding for overlap */
 }
 
 /* Background Ribbons */
@@ -251,15 +251,87 @@ body {
 
 /* Frame / Message Box */
 .frame-container {
-    border: 2px solid var(--accent-pink);
+    border: 3px solid var(--accent-pink);
+    border-radius: 10px;
     padding: 40px;
     position: relative;
-    z-index: 10 !important;
+    z-index: 100 !important;
     /* Ensure it stays on top */
-    background: rgba(255, 255, 255, 0.9);
-    /* Slightly more opaque */
-    box-shadow: 0 0 20px rgba(255, 183, 197, 0.4);
-    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+    margin-top: -80px;
+    /* Pull up to overlap the image */
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Lace Decorations */
+.lace-decoration {
+    position: fixed;
+    z-index: 50;
+    background-image: radial-gradient(circle, #000 2px, transparent 2.5px),
+        radial-gradient(circle, #000 2px, transparent 2.5px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.lace-top {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    -webkit-mask-image: radial-gradient(circle at 10px 100%, transparent 10px, black 11px);
+    -webkit-mask-size: 20px 40px;
+    -webkit-mask-repeat: repeat-x;
+    background-color: transparent;
+}
+
+/* Use SVG border image or simple repeating gradient for better lace effect */
+.lace-top::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(45deg, #000, #000 2px, transparent 2px, transparent 8px);
+    opacity: 0.8;
+}
+
+/* Alternative Simple CSS Lace */
+.lace-corner-tl {
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle at top left, transparent 0, transparent 40%, rgba(0, 0, 0, 0.8) 41%, rgba(0, 0, 0, 0.8) 100%);
+    clip-path: circle(100% at 0 0);
+    opacity: 0.3;
+}
+
+.lace-corner-br {
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: repeating-radial-gradient(circle at bottom right, transparent 0, transparent 10px, #000 11px, #000 12px);
+    opacity: 0.2;
+}
+
+.lace-bottom {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-color: #000;
+    mask-image: radial-gradient(circle at 10px 0, transparent 10px, black 11px);
+    -webkit-mask-image: radial-gradient(circle at 10px 0, transparent 10px, black 11px);
+    -webkit-mask-size: 20px 20px;
+    -webkit-mask-repeat: repeat-x;
+    opacity: 0.8;
 }
 
 /* Lace effect using borders */
