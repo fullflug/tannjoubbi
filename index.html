@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,12 @@
     <!-- Google Fonts: Sawarabi Mincho for elegance, Pinyon Script for Western aesthetics -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Sawarabi+Mincho&family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Sawarabi+Mincho&family=Zen+Old+Mincho:wght@400;700;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Background overlay for noise/texture if needed -->
     <div class="noise-overlay"></div>
@@ -23,11 +27,14 @@
                 <span class="float-item" style="animation-delay: 2s;">†</span>
                 <span class="float-item" style="animation-delay: 1.5s;">🧸</span>
             </div>
-            
+
             <div class="hero-content">
-                <p class="sub-title">Important Day</p>
-                <h1 class="main-title glitch" data-text="Happy Birthday">Happy Birthday</h1>
-                <h2 class="name glitch" data-text="Moeri">Moeri</h2>
+                <p class="sub-title">Happy Birthday</p>
+                <h1 class="main-title glitch" data-text="誕生日おめでとう！">誕生日おめでとう！</h1>
+                <div class="main-image-container">
+                    <img src="main_visual.png" alt="Happy Birthday Illustration" class="main-visual">
+                </div>
+                <h2 class="name glitch" data-text="もえり">もえり</h2>
                 <div class="date-badge">2025.12.21</div>
             </div>
         </section>
@@ -38,12 +45,14 @@
                 <div class="ribbon-top"></div>
                 <h3 class="section-title">Message</h3>
                 <p class="message-text">
-                    お誕生日おめでとう。<br>
-                    いつもかわいいもえりちゃん。<br>
+                    誕生日おめでとう！<br>
+                    新しい転職先では順調かな？<br>
+                    8月は祝ってもらったから、お返ししないとフェアじゃないから祝わせてくれ～<br>
                     <br>
-                    これからもずっと最強に可愛くいてね。<br>
-                    素敵な一年になりますように。<br>
+                    俺もいい条件の職場に転職できたよ！<br>
+                    物は送れないけど、プレゼントにもえりちゃんの好きな86のイラストとwebサイト作ってみました！<br>
                     <br>
+                    これからも頑張ってね！<br>
                     <span class="sign">From Your Bestie 🖤</span>
                 </p>
                 <div class="ribbon-bottom"></div>
@@ -80,10 +89,16 @@
         </section>
     </main>
 
+    <audio id="bgm" controls style="display:none;">
+        <source src="maou_14_shining_star.mp3" type="audio/mpeg">
+        お使いのブラウザは audio タグをサポートしていません。
+    </audio>
+
     <footer class="footer">
         <p>© 2025 Happy Birthday Moeri</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>

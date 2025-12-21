@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function createFallingElements() {
     const container = document.body;
     const symbols = ['🖤', '🎀', '♡', '†'];
-    
+
     setInterval(() => {
         const el = document.createElement('div');
         el.innerText = symbols[Math.floor(Math.random() * symbols.length)];
@@ -53,11 +53,11 @@ function createFallingElements() {
         el.style.pointerEvents = 'none';
         el.style.zIndex = '0';
         el.style.textShadow = '0 0 5px rgba(255,183,197,0.5)';
-        
+
         container.appendChild(el);
 
         const duration = Math.random() * 5000 + 5000;
-        
+
         const animation = el.animate([
             { transform: `translateY(0) rotate(0deg)`, opacity: el.style.opacity },
             { transform: `translateY(110vh) rotate(${Math.random() * 360}deg)`, opacity: 0 }
@@ -69,3 +69,16 @@ function createFallingElements() {
         animation.onfinish = () => el.remove();
     }, 500); // Add new element every 500ms
 }
+
+function tryPlay() {
+    const audio = document.getElementById('bgm');
+    if (audio.paused) {
+        audio.play().catch(() => {
+            console.log("自動再生がブロックされました");
+        });
+    }
+}
+
+window.addEventListener('load', tryPlay);
+document.addEventListener('click', tryPlay, { once: true });
+document.addEventListener('touchstart', tryPlay, { once: true });
