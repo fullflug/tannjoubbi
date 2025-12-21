@@ -85,13 +85,54 @@ body {
 
 /* Hero Section */
 .hero-section {
-    height: 90vh;
+    min-height: 100vh;
+    /* Changed from fixed height to min-height */
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     position: relative;
+    padding: 50px 0 100px 0;
+    /* Add bottom padding to prevent overlap */
+}
+
+/* Background Ribbons */
+.bg-ribbon {
+    position: fixed;
+    background: var(--accent-pink);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.8;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.ribbon-1 {
+    width: 200%;
+    height: 40px;
+    top: -10%;
+    left: -50%;
+    transform: rotate(35deg);
+    border-top: 2px dashed #fff;
+    border-bottom: 2px dashed #fff;
+}
+
+.ribbon-2 {
+    width: 200%;
+    height: 20px;
+    bottom: 20%;
+    right: -50%;
+    transform: rotate(-35deg);
+    background: var(--accent-hot-pink);
+}
+
+.ribbon-3 {
+    width: 50%;
+    height: 15px;
+    top: 10%;
+    right: -10%;
+    transform: rotate(45deg);
 }
 
 .sub-title {
@@ -213,8 +254,12 @@ body {
     border: 2px solid var(--accent-pink);
     padding: 40px;
     position: relative;
-    background: rgba(255, 255, 255, 0.8);
+    z-index: 10 !important;
+    /* Ensure it stays on top */
+    background: rgba(255, 255, 255, 0.9);
+    /* Slightly more opaque */
     box-shadow: 0 0 20px rgba(255, 183, 197, 0.4);
+    margin-top: 20px;
 }
 
 /* Lace effect using borders */
